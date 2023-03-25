@@ -1,0 +1,185 @@
+body {
+  margin: 0;
+  background: url('25501.jpg');
+  background-size: cover;
+  font-family: 'Raleway', sans-serif;
+  overflow: hidden;
+}
+
+#cards {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+}
+.cityName {
+text-decoration:underline;
+}
+#clouds {
+  z-index: -1;
+  padding: 100px 0;
+  background: none;
+  position: fixed;
+}
+.cloud {
+  width: 200px;
+  height: 60px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  border-radius: 200px;
+  position: relative;
+  background: #E8F3F8;
+}
+.cloud:before, .cloud:after {
+  content: '';
+  position: absolute;
+  background: #E8F3F8;
+  width: 100px;
+  height: 80px;
+  position: absolute; top: -15px; left: 10px;
+  
+  border-radius:100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  
+  -webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+.cloud:after {
+  width: 120px; height: 120px;
+  top: -55px; left: auto; right: 15px;
+}
+.x1 {
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+	left: 200px;
+	
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.6; /*opacity proportional to the size*/
+	
+	/*Speed will also be proportional to the size and opacity*/
+	/*More the speed. Less the time in 's' = seconds*/
+	-webkit-animation: moveclouds 25s linear infinite;
+	-moz-animation: moveclouds 25s linear infinite;
+	-o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+	left: -250px; top: -200px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+	left: 470px; top: -250px;
+	
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	transform: scale(0.75);
+	opacity: 0.75; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 18s linear infinite;
+	-moz-animation: moveclouds 18s linear infinite;
+	-o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+	left: -150px; top: -150px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+.card {
+  z-index: -2;
+  border-radius: 2rem;
+  background-color: #121212;
+  opacity: 0.8;
+  color: #E8F3F8;
+  padding: 1.5rem;
+  width: 40vw;
+}
+.card-main {
+  display:flex;
+  flex-direction: column;
+}
+#cityname-search {
+  display: flex;
+  justify-content: space-between;
+}
+#search-button {
+  background: none;
+  border: none;
+  color: #E8F3F8;
+}
+#city-search {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #E8F3F8;
+  color: #E8F3F8;
+}
+#city-search:focus {
+  border: none;
+  border-bottom: 1px solid #E8F3F8;
+}
+#temps {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+}
+#details1 {
+  display:grid;
+  grid-template: 1fr / 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+.detail {
+  display: block;
+}
+.detail p {
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-size: contain;
+  }
+  .card {
+    width: 100%;
+    border-radius: 0;
+  }
+}
